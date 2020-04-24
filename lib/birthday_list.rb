@@ -1,11 +1,10 @@
 class BirthdayList
 
   def initialize
-    @birthday_list = []
+    @list = []
   end
 
-  def add(name, birthday)
-    list = {:name => name, :birthday => birthday}
-    @birthday_list << list
+  def add(name, date)
+    @list << { name: name, birthday: date }
   end
 end
