@@ -13,10 +13,17 @@ describe BirthdayList do
 
   it 'adds two birthdays' do
     birthday_list.add('Guy Fawkes', "13 April 1570")
+    
     expect(birthday_list.add('Julie Andrews', "1 October 1935")).to eq [{ name: 'Guy Fawkes', birthday: "13 April 1570" }, { name: 'Julie Andrews', birthday: "1 October 1935" }]
   end
 
   # See them all at once with their names and birthdays each on a line in a tidy format
+  it 'shows all the birthdays' do
+    birthday_list = BirthdayList.new
+    birthday_list.add('Guy Fawkes', "13 April 1570")
+    birthday_list.add('Julie Andrews', "1 October 1935")
 
+    expect { birthday_list.show }.to output("Guy Fawkes: 13 April 1570\nJulie Andrews: 1 October 1935\n").to_stdout
+  end
 
 end
